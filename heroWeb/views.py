@@ -10,3 +10,9 @@ def index(request):
 
 class GrupoDetailView(DetailView):
     model = Grupo
+
+class SuperheroesDetailView(DetailView):
+    model = Superheroe
+
+class SuperpoderDetailView(ListView):
+    model = Superpoder

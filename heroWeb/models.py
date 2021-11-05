@@ -10,6 +10,7 @@ class Grupo(models.Model):
 
 class Superheroe(models.Model):
  # Campo para la relación
+    id = models.CharField(max_length = 50, primary_key = True)
     grupo = models.ForeignKey(Grupo, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=70)
     icono = models.URLField(max_length=300)
