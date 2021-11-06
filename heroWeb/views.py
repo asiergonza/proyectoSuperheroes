@@ -3,10 +3,11 @@ from django.shortcuts import render
 from .models import Grupo, Superheroe, Superpoder 
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
+from django.shortcuts import get_list_or_404
 
 # Create your views here.
 def index(request):
-    grupos = Grupo.objects.all()
+    grupos = get_list_or_404(Grupo)
     context= {
         'editorial':grupos
     }
@@ -19,6 +20,11 @@ class GrupoListView(ListView):
     queryset = Grupo.objects.all()
 class SuperheroesDetailView(DetailView):
     model = Superheroe
-
-class SuperpoderDetailView(ListView):
+class SuperheroesListView(ListView):
+    model = Superheroe
+    queryset = Superheroe.objects.all()
+class SuperpoderDetailView(DetailView):
     model = Superpoder
+class SuperpoderListView(ListView):
+    model = Superpoder
+    queryset = Superpoder.objects.all()
