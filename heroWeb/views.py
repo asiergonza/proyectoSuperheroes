@@ -6,11 +6,17 @@ from django.views.generic.list import ListView
 
 # Create your views here.
 def index(request):
-    return HttpResponse('Página inicial')
+    grupos = Grupo.objects.all()
+    context= {
+        'editorial':grupos
+    }
+    return render(request,'index.html',context)
 
 class GrupoDetailView(DetailView):
     model = Grupo
-
+class GrupoListView(ListView):
+    model = Grupo
+    queryset = Grupo.objects.all()
 class SuperheroesDetailView(DetailView):
     model = Superheroe
 

@@ -13,8 +13,10 @@ urlpatterns = [
     # ej: /heroWeb/
     path('', views.index, name='index'),
 
-    #/heroWeb/grupos
+    #/heroWeb/grupos lista de grupos
     path('<str:nombre>/', GrupoDetailView.as_view(), name='grupos'),
+    #/heroWeb/grupos/[id_Grupos]
+    path('grupos/<int:ids>/', GrupoDetailView.as_view(), name='grupo'),
     #/heroApp/grupos/[id_Superheroe] --> Por si hay dos superheroes con nombres iguales
     path('grupos/<int:id>/', SuperheroesDetailView.as_view(), name='superheroes'),
     #/heroApp/superehores/[nombre_Habilidad] 
