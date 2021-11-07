@@ -11,20 +11,25 @@ def index(request):
     context= {
         'editorial':grupos
     }
-    return render(request,'index.html',context)
+    return render(request,'home.html',context)
 
 class GrupoDetailView(DetailView):
     model = Grupo
 class GrupoListView(ListView):
     model = Grupo
     queryset = Grupo.objects.all()
+    template_name= 'grupo_list.html'
 class SuperheroesDetailView(DetailView):
     model = Superheroe
 class SuperheroesListView(ListView):
     model = Superheroe
     queryset = Superheroe.objects.all()
+    context_object_name = 'superheroe'
+	
 class SuperpoderDetailView(DetailView):
     model = Superpoder
 class SuperpoderListView(ListView):
     model = Superpoder
     queryset = Superpoder.objects.all()
+    context_object_name = 'superpoder'
+	

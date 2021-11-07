@@ -1,1 +1,78 @@
 {% extends "index.html" %}
+{% load static %}
+
+
+{% block cuerpo %} 
+    <!-- Banner -->
+    <section id="banner">
+        <div class="inner">
+            <h2>HeroWeb</h2>
+            <p>Inspirando tu mente desde ayer</p>
+            <ul class="actions">
+                <li><a href="#one" class="button big scrolly">Learn More</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- One -->
+   
+    <section id="one" class="wrapper style1">
+        <div class="container">
+            <header class="major">
+                <h2>Bienvenido al maravilloso mundo de los comics</h2>
+                <p>En esta pagina web encontraras tus editoriales favoritas, como Marverl y DC.<br />
+                 Contamos con un monton de superheroes, para que nunca te aburras de leer sobre ellos.<br />
+                Ademas, os damos la oportunidad de explorar todos los superpoderes.</p>
+            </header>
+            <div class="slider">
+                <span class="nav-previous"></span>
+                <div class="viewer">
+                    <div class="reel">
+                        <div class="slide">
+                            <img src="{% static 'images/slide1.jpg' %}" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'images/slide2.jpg' %}" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'images/slide3.jpg' %}" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'images/slide4.jpg' %}" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <span class="nav-next"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three -->
+    {% for grupo in editorial %}
+    <section  class="wrapper style1">
+        <div class="container">
+            <header class="major">
+                <h2>{{grupo.nombre}}</h2>
+                <p>Dentro del basto universo de {{grupo.nombre}} existen varios heroes disponibles en nuestra web<br />
+                Pero no hay heroes mas representantes del universo {{grupo.nombre}} que los siguientes<br />
+               </p>
+            </header>
+            <div class="row">
+                {% for heroe in grupo.superheroe_set.all|slice:":3"%}
+                        <div class="4u 6u(2) 12u$(3)">
+                            <article class="box post">
+                                <a href="{% url 'superheroe' heroe.id%}" class="image fit"><img src="{{heroe.icono}}" alt="{{heroe.nombre}} imagen" /></a>
+                                <h3>{{heroe.nombre}}</h3>
+                                <ul class="actions">
+                                    <li><a href="{% url 'superheroe' heroe.id%}" class="button">Learn More</a></li>
+                                </ul>
+                            </article>
+                        </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+    
+
+{% endblock %}
