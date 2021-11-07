@@ -21,8 +21,9 @@
 	<body class="landing">
 
 		<!-- Header -->
-			{% block header %}{% endblock %}
-			<header id="header" class="alt skel-layers-fixed">	
+			{% block header %}
+			{% endblock %}
+				
 				
 				<nav id="nav">
 					<ul>
@@ -31,7 +32,7 @@
 							<a href="{% url 'grupos' %}" class="icon fa-angle-down">Editoriales</a>
 							<ul>
 								{% for grupo in editorial %}
-								<li><a href="{% url 'grupo' grupo.nombre%}">{{grupo.nombre}}</a></li>
+								<li><a href="{% url 'grupo' grupo.id %}">{{grupo.nombre}}</a></li>
 								{% endfor %}
 							</ul>
 						</li>
