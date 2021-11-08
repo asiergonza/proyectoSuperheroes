@@ -36,8 +36,9 @@ class SuperheroesDetailView(DetailView):
 
 class SuperheroesListView(ListView):
     model = Superheroe
+    template_name = 'superheroes_list.html'
     queryset = Superheroe.objects.all()
-    context_object_name = 'superheroe'
+    context_object_name = 'superheroes'
 	
     def get_context_data(self, **kwargs):
         # Cargar el contexto base

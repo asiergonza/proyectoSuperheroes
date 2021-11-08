@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+{% load static %}
+{% block header %}
+<header id="header" class="skel-layers-fixed">
+{% endblock %}
+{% block cuerpo %} 
+<section id="main" class="wrapper style1">
+    <header class="major">
+        <h2>SUPERHÉROES</h2>
+        <p>Listado de todos los superheroes</p>
+    </header>
+    <div class="container">
+            
+        <!-- Content -->
+        
+            <section id="content">  
+                <section >
+                    {% for superheroe in superheroes %}  
+                        <section >              
+                            <h2>{{superheroe.nombre}}</a></h2>
+                            <!--<a class="image left" href="{% url 'grupo' grupo.id %}" ><img src="{{grupo.icono}}" alt="" /></a><p>{{grupo.descripcion}}</p>
+                            -->
+                        </section>
+                        <section class= "blockimage">  
+                            <hr/>
+                        </section>
+                    {% endfor %}
+                </section>
+            </section>
+
+    </div>
+</section>	
+{% endblock %}
