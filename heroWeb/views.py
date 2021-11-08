@@ -31,9 +31,17 @@ class GrupoListView(ListView):
     context_object_name= 'editorial'
     template_name= 'grupo_list.html'
 
-class SuperheroesDetailView(DetailView):
+class SuperheroesDetailView(DetailView):    #IN PROGRESS
     model = Superheroe
+    template_name = "superheroe.html"
+    def get_context_data(self, **kwargs):
+        # Cargar el contexto base
+        context = super().get_context_data(**kwargs)
+        # Añadir un listado de departamentos
+        context['editorial'] = Grupo.objects.all()
+        return context
 
+        
 class SuperheroesListView(ListView):
     model = Superheroe
     template_name = 'superheroes_list.html'
