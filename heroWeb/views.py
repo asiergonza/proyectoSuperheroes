@@ -53,10 +53,11 @@ class SuperpoderListView(ListView):
     model = Superpoder
     template_name = 'superpoder_list.html'
     queryset = Superpoder.objects.all() #La info que mandamos al html
-    context_object_name = 'superpoder'  #cambio de nombre al objeto
+    context_object_name = 'superpoderes'  #cambio de nombre al objeto
     
     def get_context_data(self, **kwargs):
         context = super(SuperpoderListView, self).get_context_data(**kwargs)
-        context['superpoderes'] = Superpoder.objects.all()
+        #context['superpoderes'] = Superpoder.objects.all()
+        context['editorial'] = Grupo.objects.all()
         return context
 	
