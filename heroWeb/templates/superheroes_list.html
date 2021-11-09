@@ -17,7 +17,7 @@
                 <section >
                     {% for superheroe in superheroes %}  
                         <section >              
-                            <h2>{{superheroe.nombre}}</a></h2>
+                            <h2> <a href="{% url 'superheroe' superheroe.id %}"> {{superheroe.nombre}} </a></h2>
                         </section>
                         <section class= "blockimage">  
                             <hr/>

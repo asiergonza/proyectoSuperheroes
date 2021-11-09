@@ -18,7 +18,7 @@
                     <h1>pruuuueeba</h1>
                     {% for superpoder in superpoderes %}  
                         <section >              
-                            <h2>{{ superpoder.nombre }}</h2>
+                            <h2><a href="{% url 'ssuperpodere' superpoder.id %}"> {{ superpoder.nombre }} </a></h2>
                         </section>
                         <section class= "blockimage">  
                             <hr/>

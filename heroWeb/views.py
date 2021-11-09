@@ -57,6 +57,13 @@ class SuperheroesListView(ListView):
         
 class SuperpoderDetailView(DetailView):
     model = Superpoder
+    template_name = 'superpoder_detail.html'
+    def get_context_data(self, **kwargs):
+        # Cargar el contexto base
+        context = super().get_context_data(**kwargs)
+        # Añadir un listado de departamentos
+        context['editorial'] = Grupo.objects.all()
+        return context
 
 class SuperpoderListView(ListView):
     model = Superpoder

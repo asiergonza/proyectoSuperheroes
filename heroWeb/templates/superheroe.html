@@ -15,8 +15,27 @@
         
             <section id="content">  
                 <section >
-                    <h1>banana</h1>
-                    <p>{{ object.nombre }}</p>
+                    <h1>{{ object.nombre }}</h1>
+                    <p>{{ object.fecha_nacimiento }}</p>
+
+                     
+                        <section >              
+                            <ul>
+
+                                {% for superpoder in object.superpoder_set.all %} 
+                                <li>
+                                    <a href="{% url 'ssuperpodere' superpoder.id %}"> {{ superpoder.nombre }} </a>
+                                </li>
+
+
+                            </ul>
+                        </section>
+                        <section class= "blockimage">  
+                            <hr/>
+                        </section>
+                    {% endfor %}
+
+
                 </section>
             </section>
 

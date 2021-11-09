@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+{% load static %}
+{% block header %}
+<header id="header" class="skel-layers-fixed">
+{% endblock %}
+{% block cuerpo %} 
+<section id="main" class="wrapper style1">
+    <header class="major">
+        <h2>Superpoder específico</h2>
+        <p>Toda la información sobre tu superpoder favorito</p>
+    </header>
+    <div class="container">
+            <section id="content">  
+                <section >
+                    <h1>{{ object.nombre }}</h1>
+                    
+
+                     
+                    <section >              
+                        <ul>
+
+                            {% for superheroe in object.superheroe.all %} 
+                            <li>
+                                <a href="{% url 'superheroe' superheroe.id %}"> {{ superheroe.nombre }} </a>
+                            </li>
+
+                            {% endfor %}
+
+                        </ul>
+                    </section>
+                    <section class= "blockimage">  
+                        <hr/>
+                    </section>
+                    
+
+
+                </section>
+            </section>
+
+    </div>
+</section>	
+{% endblock %}
