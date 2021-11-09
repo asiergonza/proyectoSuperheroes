@@ -70,3 +70,7 @@ class SuperpoderListView(ListView):
         context['editorial'] = Grupo.objects.all()
         return context
 	
+# <!--<a class="image left" href="{% url 'ggrupo' grupo.id %}" ><img src="{{grupo.icono}}" alt="" /></a><p>{{grupo.descripcion}}</p>
+#                             -->
+#                             <!--<a class="image left" href="{% url 'grupo' grupo.id %}" ><img src="{{grupo.icono}}" alt="" /></a><p>{{grupo.descripcion}}</p>
+#                                                         -->
