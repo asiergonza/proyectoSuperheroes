@@ -16,7 +16,10 @@
             <section id="content">  
                 <section >
                     <h1>{{ object.nombre }}</h1>
-                    <p>{{ object.fecha_nacimiento }}</p>
+                    <p>Fecha de nacimiento: {{ object.fecha_nacimiento }}</p>
+                    <p>Pertenece al grupo: </p>
+                    <a href="{% url 'grupo' object.grupo.id %}"> {{ object.grupo }} </a>
+                    <p>Muerto?: {{ object.muerto}}</p>
 
                      
                         <section >              
