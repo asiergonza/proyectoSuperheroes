@@ -15,15 +15,17 @@
         
             <section id="content">  
                 <section >
-                    <h1>{{ object.nombre }}</h1>
-                    <p>Fecha de nacimiento: {{ object.fecha_nacimiento }}</p>
-                    <p>Pertenece al grupo: </p>
-                    <a href="{% url 'grupo' object.grupo.id %}"> {{ object.grupo }} </a>
-                    <p>Muerto?: {{ object.muerto}}</p>
-
-                    <h2>Superpoderes de {{ object.nombre }}</h2>
-                     
-                        <section >              
+                    <section class="image left">
+                        <a  href="{% url 'superheroe' superheroe.id %}" ><img src="{{object.icono}}" alt="" /></a>
+                    </section>
+                    <section>
+                        <h1>{{ object.nombre }}</h1>
+                        <p>Fecha de nacimiento: {{ object.fecha_nacimiento }}</p>
+                        <p>Pertenece al grupo: <a href="{% url 'grupo' object.grupo.id %}"> {{ object.grupo }} </a></p>
+                        <p>Muerto?: {{ object.muerto}}</p>
+                        <h2>Superpoderes de {{ object.nombre }}</h2>
+                    </section>
+                        <section class= "blockimage">              
                             <ul>
 
                                 {% for superpoder in object.superpoder_set.all %} 

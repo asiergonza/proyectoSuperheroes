@@ -18,6 +18,7 @@
                     {% for superheroe in superheroes %}  
                         <section >              
                             <h2> <a href="{% url 'superheroe' superheroe.id %}"> {{superheroe.nombre}} </a></h2>
+                            <a class="image left" href="{% url 'superheroe' superheroe.id %}" ><img src="{{superheroe.icono}}" alt="" /></a>
                         </section>
                         <section class= "blockimage">  
                             <hr/>
