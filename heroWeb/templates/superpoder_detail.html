@@ -12,8 +12,9 @@
     <div class="container">
             <section id="content">  
                 <section >
-                    <h1>{{ object.nombre }}</h1>
-                    
+                    <h2>{{ object.nombre }}</h2>
+                    <p>{{object.descripcion}}</p>
+                    <h3>Personajes que tienen {{ object.nombre }}:</h3>
 
                      
                     <section >              
@@ -22,6 +23,7 @@
                             {% for superheroe in object.superheroe.all %} 
                             <li>
                                 <a href="{% url 'superheroe' superheroe.id %}"> {{ superheroe.nombre }} </a>
+                                
                             </li>
 
                             {% endfor %}
