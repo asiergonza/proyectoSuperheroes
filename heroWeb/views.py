@@ -83,7 +83,7 @@ class ajax(DetailView):
     model = Superheroe
     template_name = 'ajax.html'
     queryset = Superheroe.objects
-    context_object_name = 'superheroes'
+    context_object_name = 'superheroe'
 	
 
 	
