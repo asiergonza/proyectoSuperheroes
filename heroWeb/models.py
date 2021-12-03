@@ -18,6 +18,7 @@ class Superheroe(models.Model):
     fecha_nacimiento = models.DateField()
     muerto = models.BooleanField()
     id_api = models.CharField(max_length=20, blank=True)
+    base = models.CharField(max_length= 500, blank= True)
     def __str__(self) -> str:
         return f"{self.nombre}"
 
