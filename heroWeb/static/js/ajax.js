@@ -3,6 +3,7 @@ $(document).ready(function() {
       var href = $(this).attr("href");
       href = href.replace("superheroes", "superheroesAjax");
       $(this).qtip({
+         
          content: {
             url: href,
             method: 'get'

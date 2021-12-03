@@ -1,25 +1,17 @@
-<div id= "cont">
-    <p>{{superheroe.nombre}}</p>
-</div>
-
-
 <script>
-    fetch('https://superheroapi.com/api/1080594549377442/70/')
-    
-    .then(data => {
-        //Aqui se recoge toda la informacion correspondiente
-        let p = document.getElementById("cont");
-        let titulo = document.createElement("h2");
-        alert(data.response)
-        titulo.textContent=data.response;
-        p.append(titulo);
-    })
-    .catch(error => {
-    alert("EEROR");
-    console.log('Error: ', error)});
+
+$(document).ready(function() {
+    recogerBio(); 
+  });
+    sleep(500);
 </script>
 
+<script>
 
+function recogerBio(){
+    
+}
+</script>
 
 <script>
 
@@ -31,3 +23,7 @@ function sleep(milliseconds) {
   } while (currentDate - date < milliseconds);
 }
 </script>
+
+<div>
+  <p id= cont>No cargado</p>
+</div>

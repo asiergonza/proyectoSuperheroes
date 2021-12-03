@@ -11,6 +11,7 @@ function recogerBio(){
         }
     })
     .then(data => {
+        alert("COJO DATOS")
         //Aqui se recoge toda la informacion correspondiente
         console.log(data);
         let p = document.getElementById("boton");
