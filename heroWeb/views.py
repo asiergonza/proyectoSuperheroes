@@ -76,6 +76,16 @@ class SuperpoderListView(ListView):
         #context['superpoderes'] = Superpoder.objects.all()
         context['editorial'] = Grupo.objects.all()
         return context
+
+
+class ajax(DetailView):
+
+    model = Superheroe
+    template_name = 'ajax.html'
+    queryset = Superheroe.objects
+    context_object_name = 'superheroes'
+	
+
 	
 # <!--<a class="image left" href="{% url 'ggrupo' grupo.id %}" ><img src="{{grupo.icono}}" alt="" /></a><p>{{grupo.descripcion}}</p>
 #                             -->
