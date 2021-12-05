@@ -1,16 +1,34 @@
-<script>
 
-$(document).ready(function() {
-    recogerBio(); 
+
+<script>
+  jQuery(document).ready(function() {
+    recogerBio();
   });
-    sleep(500);
-</script>
-
-<script>
-
-function recogerBio(){
-    
+  
+  function recogerBio(){
+    fetch('https://superheroapi.com/api/1080594549377442/{{superheroe.id_api}}/')
+    .then(response => {
+        if (response.ok) {
+            
+            return response.json();
+        } 
+        else {
+            console.log(response.statusCode);
+            return Promise.reject('Error en la respuesta del server')
+        }
+    })
+    .then(data => {
+        console.log(data);
+        //Aqui se recoge toda la informacion correspondiente
+        let h2=document.getElementById('cont');
+        h2.textContent=data.name;
+        let div=document.createElement("div");
+        h2.after(div);
+        div.textContent= "La inteligencia es de:"+data.powerstats["intelligence"];
+    })
+    .catch(error => console.log('Error: ', error));
 }
+
 </script>
 
 <script>
@@ -25,5 +43,5 @@ function sleep(milliseconds) {
 </script>
 
 <div>
-  <p id= cont>No cargado</p>
+  <h2 id= cont>No cargado</h2>
 </div>

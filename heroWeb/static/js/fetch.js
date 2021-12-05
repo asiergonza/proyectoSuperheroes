@@ -11,13 +11,9 @@ function recogerBio(){
         }
     })
     .then(data => {
-        alert("COJO DATOS")
+        
         //Aqui se recoge toda la informacion correspondiente
-        console.log(data);
-        let p = document.getElementById("boton");
-        let titulo = document.createElement("h2");
-        titulo.textContent=data.name;
-        p.after(titulo);
+        print(data)
     })
     .catch(error => console.log('Error: ', error));
 }
