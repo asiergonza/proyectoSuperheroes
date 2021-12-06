@@ -127,15 +127,15 @@
                     <h4>Teléfono</h4>
                 </div>
             </div>
-            <div class="row" v-for="c in contactos">
+            <div class="row" v-for="c in contactos" vocab="http://schema.org/" typeof="Person">
                 <div class="col-xs-4">
-                    <p>{{c.nombre}}</p>
+                    <p> <span property="name">{{c.nombre}}</span></p>
                 </div>
                 <div class="col-xs-4">
-                    <p>{{c.email}}</p>
+                    <p><span property="email">{{c.email}} </span></p>
                 </div>
                 <div class="col-xs-3">
-                    <p>{{c.telefono}}</p>
+                    <p><span property="telephone">{{c.telefono}}</span></p>
                 </div>
                 <div class="col-xs-1">
                     <button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
