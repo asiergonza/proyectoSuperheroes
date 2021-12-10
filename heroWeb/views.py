@@ -82,12 +82,4 @@ class ajax(DetailView):
 
     model = Superheroe
     template_name = 'ajax.html'
-    queryset = Superheroe.objects
     context_object_name = 'superheroe'
-	
-
-	
-# <!--<a class="image left" href="{% url 'ggrupo' grupo.id %}" ><img src="{{grupo.icono}}" alt="" /></a><p>{{grupo.descripcion}}</p>
-#                             -->
-#                             <!--<a class="image left" href="{% url 'grupo' grupo.id %}" ><img src="{{grupo.icono}}" alt="" /></a><p>{{grupo.descripcion}}</p>
-#                                                         -->
