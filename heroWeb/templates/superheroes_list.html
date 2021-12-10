@@ -17,12 +17,10 @@
                 
                 {% for superheroe in superheroes %}  
                     <section class = "blockHero">              
-                        <h2 class = "Hero"> <a href="{% url 'superheroe' superheroe.id %}"> {{superheroe.nombre}} </a></h2>
-                        <a class="image left" href="{% url 'superheroe' superheroe.id %}" ><img src="{{superheroe.icono}}" alt="" /></a>
-                    </section>
-                          
-                    <hr class="blockimage"/>
-                        
+                        <h2 class = "Hero"> <a class = "titulo" href="{% url 'superheroe' superheroe.id %}"> {{superheroe.nombre}} </a></h2>
+                        <a class="image left" href="{% url 'superheroe' superheroe.id %}" ><img src="{{superheroe.icono}}" alt="" /></a> 
+                        <hr class="blockimage"/>
+                    </section>  
                 {% endfor %}
                 
             </section>

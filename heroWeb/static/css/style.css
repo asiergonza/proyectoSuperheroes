@@ -1372,3 +1372,10 @@
 		#footer .copyright {
 			font-size: 0.8em;
 		}
+/* Disappear an element */
+	#boton.disappear{
+		display: none;
+	}
+	#boton1.disappear{
+		display: none;
+	}
