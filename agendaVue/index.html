@@ -138,28 +138,14 @@
                     <p><span property="telephone">{{c.telefono}}</span></p>
                 </div>
                 <div class="col-xs-1">
-                    <button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
-                </div>
-            </div>
-            <!--ESTO ES PRUEBA-->
-            <div class="row">
-                <div class="col-xs-4">
-                    <p>{{nuevoNombre}}</p>
-                </div>
-                <div class="col-xs-4">
-                    <p>{{nuevoEmail}}</p>
-                </div>
-                <div class="col-xs-3">
-                    <p>{{nuevoTelefono}}</p>
-                </div>
-                <div class="col-xs-1">
-                    <button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                    <button @click="borrarContacto(c)" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
                 </div>
             </div>
 
+
             </div>
             <div>
-            <div class="row">
+            <div class="row" v-if="contactos.length == 0">
                 <div class="col-xs-12">
                     <p>No se ha encontrado ningún contacto.</p>
                 </div>
@@ -177,37 +163,35 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <form name="sentMessage" id="contactForm" novalidate>
-                            <div class="row control-group">
-                                <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label>Nombre</label>
-                                    <input v-model="nuevoNombre" type="text" class="form-control" placeholder="Nombre" id="name">
-                                    <p class="help-block text-danger"></p>
-                                </div>
+                    <div class="col-lg-8 col-lg-offset-2">         
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Nombre</label>
+                                <input v-model="nuevoNombre" type="text" class="form-control" placeholder="Nombre" id="name">
+                                <p class="help-block text-danger"></p>
                             </div>
-                            <div class="row control-group">
-                                <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label>Email</label>
-                                    <input v-model="nuevoEmail" type="email" class="form-control" placeholder="Email" id="email">
-                                    <p class="help-block text-danger"></p>
-                                </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Email</label>
+                                <input v-model="nuevoEmail" type="email" class="form-control" placeholder="Email" id="email">
+                                <p class="help-block text-danger"></p>
                             </div>
-                            <div class="row control-group">
-                                <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label>Teléfono</label>
-                                    <input v-model="nuevoTelefono" type="tel" class="form-control" placeholder="Número de teléfono" id="phone">
-                                    <p class="help-block text-danger"></p>
-                                </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Teléfono</label>
+                                <input v-model="nuevoTelefono" type="tel" class="form-control" placeholder="Número de teléfono" id="phone">
+                                <p class="help-block text-danger"></p>
                             </div>
-                            <br>
-                            <div id="success"></div>
-                            <div class="row">
-                                <div class="form-group col-xs-12">
-                                    <button @click="nuevoContacto" class="btn btn-success btn-lg">Añadir</button>
-                                </div>
+                        </div>
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button @click="nuevoContacto" class="btn btn-success btn-lg">Añadir</button>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -281,9 +265,9 @@
                 nuevoTelefono: '',
                 contactos:[
                     {
-                        nombre: 'John Doe 2',
-                        email: 'john.doe@deusto.es 2',
-                        telefono: '44414354135'
+                        nombre: 'Javier Lazarillo de tormes',
+                        email: 'tormes.javier@unai.unai',
+                        telefono: '67766778'
                     }
                 ]
             },
@@ -293,8 +277,10 @@
                     this.nuevoNombre = "";
                     this.nuevoEmail = "";
                     this.nuevoTelefono = "";
+                },
+                borrarContacto: function(contacto){
+                    this.contactos.splice(this.contactos.indexOf(contacto));
                 }
-
             }
         });
 
