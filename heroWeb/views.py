@@ -42,8 +42,7 @@ class SuperheroesListView(ListView):
     model = Superheroe
     template_name = 'superheroes_list.html'
     queryset = Superheroe.objects.all()
-    context_object_name = 'superheroes'
-	
+    context_object_name = 'superheroes'	
     def get_context_data(self, **kwargs):
         # Cargar el contexto base
         context = super().get_context_data(**kwargs)
@@ -64,7 +63,6 @@ class SuperpoderListView(ListView):
     template_name = 'superpoder_list.html'
     queryset = Superpoder.objects.all() #La info que mandamos al html
     context_object_name = 'superpoderes'  #cambio de nombre al objeto
-    
     def get_context_data(self, **kwargs):
         context = super(SuperpoderListView, self).get_context_data(**kwargs)
         context['editorial'] = Grupo.objects.all()
