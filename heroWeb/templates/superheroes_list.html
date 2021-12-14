@@ -14,7 +14,6 @@
         <!-- Content -->
         
             <section id="content">  
-                
                 {% for superheroe in superheroes %}  
                     <section class = "blockHero">              
                         <h2 class = "Hero"> <a class = "titulo" href="{% url 'superheroe' superheroe.id %}"> {{superheroe.nombre}} </a></h2>
@@ -22,7 +21,6 @@
                         <hr class="blockimage"/>
                     </section>  
                 {% endfor %}
-                
             </section>
 
     </div>

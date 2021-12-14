@@ -11,41 +11,34 @@
     </header>
     <div class="container">
             
-        <!-- Content -->
-        
-            <section id="content">  
-                <section >
-                    <section class="image right">
-                        <a  href="{% url 'superheroe' superheroe.id %}" ><img src="{{object.icono}}" alt="" /></a>
-                    </section>
-                    <section>
-                        <h2>{{ object.nombre }}</h2>
-                        <p>Fecha de nacimiento: {{ object.fecha_nacimiento }}</p>
-                        <p>Pertenece al grupo: <a href="{% url 'grupo' object.grupo.id %}"> {{ object.grupo }} </a></p>
-                        <p>Muerto?: {{ object.muerto}}</p>
-                        <h3>Superpoderes de {{ object.nombre }}</h3>
-                    </section>
-                        <section class= "blockimage">              
-                            <ul>
-
-                                {% for superpoder in object.superpoder_set.all %} 
-                                <li>
-                                    <a href="{% url 'ssuperpodere' superpoder.id %}"> {{ superpoder.nombre }} </a>
-                                </li>
-
-
-                            </ul>
-                        
-                        </section>
-                    {% endfor %}
-                    <hr class= "blockimage"/>
-                    <div>
-                        <input id="boton" type="button" onclick="recogerBio({{object.id_api}})" value="Mostrar mas información">
-                        <input id="boton1" class="disappear" type="button" onclick="borrar()" value="Mostrar menos información">
-                    </div>
-                    
+    <!-- Content -->
+        <section id="content">  
+                <section class="image right">
+                    <a  href="{% url 'superheroe' superheroe.id %}" ><img src="{{object.icono}}" alt="" /></a>
                 </section>
-            </section>
+                <section>
+                    <h2>{{ object.nombre }}</h2>
+                    <p>Fecha de nacimiento: {{ object.fecha_nacimiento }}</p>
+                    <p>Pertenece al grupo: <a href="{% url 'grupo' object.grupo.id %}"> {{ object.grupo }} </a></p>
+                    <p>Muerto?: {{ object.muerto}}</p>
+                    <h3>Superpoderes de {{ object.nombre }}</h3>
+                </section>
+                    <section class= "blockimage">              
+                        <ul>
+                            {% for superpoder in object.superpoder_set.all %} 
+                            <li>
+                                <a href="{% url 'ssuperpodere' superpoder.id %}"> {{ superpoder.nombre }} </a>
+                            </li>
+                        </ul>
+                    
+                    </section>
+                {% endfor %}
+                <hr class= "blockimage"/>
+                <div>
+                    <input id="boton" type="button" onclick="recogerBio({{object.id_api}})" value="Mostrar mas información">
+                    <input id="boton1" class="disappear" type="button" onclick="borrar()" value="Mostrar menos información">
+                </div>
+        </section>
 
     </div>
 </section>	

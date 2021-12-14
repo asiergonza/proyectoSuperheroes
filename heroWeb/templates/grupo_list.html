@@ -14,18 +14,14 @@
         <!-- Content -->
         
             <section id="content">  
-                <section >
-                    {% for grupo in editorial %}  
-                        <section >              
-                            <h2><a href="{% url 'grupo' grupo.id %}" >{{grupo.nombre}}</a></h2>
-                            <a class="image left" href="{% url 'grupo' grupo.id %}" ><img src="{{grupo.icono}}" alt="" /></a><p>{{grupo.descripcion}}</p>
-                            
-                        </section>
-                        <section class= "blockimage">  
-                            <hr/>
-                        </section>
-                    {% endfor %}
-                </section>
+                {% for grupo in editorial %}  
+                    <section >              
+                        <h2><a href="{% url 'grupo' grupo.id %}" >{{grupo.nombre}}</a></h2>
+                        <a class="image left" href="{% url 'grupo' grupo.id %}" ><img src="{{grupo.icono}}" alt="" /></a><p>{{grupo.descripcion}}</p>
+                        <hr class= "blockimage"/>
+                    </section>
+                    
+                {% endfor %}
             </section>
 
     </div>

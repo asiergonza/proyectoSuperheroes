@@ -14,18 +14,13 @@
         <!-- Content -->
         
             <section id="content">  
-                <section >
-                    {% for superpoder in superpoderes %}  
-                        <section >              
-                            <h2><a href="{% url 'ssuperpodere' superpoder.id %}"> {{ superpoder.nombre }} </a></h2>
-                        </section>
-                        <section class= "blockimage">  
-                            <hr/>
-                        </section>
-                    {% endfor %}
-                </section>
+                {% for superpoder in superpoderes %}  
+                    <section >              
+                        <h2><a href="{% url 'ssuperpodere' superpoder.id %}"> {{ superpoder.nombre }} </a></h2>
+                        <hr class= "blockimage"/>
+                    </section>
+                {% endfor %}
             </section>
-
     </div>
 </section>	
 {% endblock %}
